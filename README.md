@@ -1,8 +1,8 @@
 # intune-automatic-selective-wipe
 
-Automatic Selective Wipe for Intune App Protection/ManagedAppRegistered Devices on the Last Working Day of an Employee.
+Perform an Automatic Selective Wipe on Devicecs registered to Intune App Protection on the Last Working Day of the user
 
-You can use our Automatic Selective Wipe application to:
+You can use this solution to:
 * Automatically wipe ManagedAppRegistrations from Devices on the Last Working Day of an Employee based on the AccountExpiry attribute
 
 # Prerequisites
