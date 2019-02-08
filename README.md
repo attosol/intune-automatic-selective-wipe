@@ -39,8 +39,6 @@ Do you have any questions about our projects? Do you have any comments or ideas 
 We are always looking for great new ideas. You can send your questions and suggestions to us in the Issues section of this repository or contact us at ``contact@attosol.com``.
 
 # Additional Resources
-* [Deploy AIP Scanner](https://docs.microsoft.com/en-us/azure/information-protection/deploy-use/deploy-aip-scanner)
-* [AIP Scanner Public Preview](https://cloudblogs.microsoft.com/enterprisemobility/2017/10/25/azure-information-protection-scanner-in-public-preview/)
 * [Azure AD Connect Directory extensions](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-feature-directory-extensions)
 * [Credential Manager 2.0](https://www.powershellgallery.com/packages/CredentialManager/2.0)
 * [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview)
