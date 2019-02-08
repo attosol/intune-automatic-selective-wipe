@@ -17,6 +17,22 @@ After the prerequisites are installed or met, perform the following steps to use
 * Download the contents of the repositories to your local machine.
 * Extract the files to a local folder (e.g. c:\intune-automatic-selective-wipe) on any machine
 * Either manually run this script or schedule the script using Task Scheduler
+* After installing Credential Manager 2.0, run the below cmdlet in PowerShell to save the credentials to Windows Credential Manager
+
+```
+
+New-StoredCredential -Target IntuneWipe -UserName 'admin@domain.com' -Password 'Password' -Persist LocalMachine | Out-Null
+
+```
+
+* You need to update the script with the client_id & tenant_id before scheduling the script. To update client_id, navigate to line # 167 in the code. To update tenant_id navigate to line # 186 in the code.
+
+```
+
+client_id = "5267372f-f7bc-4570-a4b2-28cb7e66646a"  #line # 167
+$tenantID = "69a5c584-5bce-450a-9ee2-4cf417193ebd"  #line # 186
+
+```
 
 # Questions and comments.
 Do you have any questions about our projects? Do you have any comments or ideas you would like to share with us?
