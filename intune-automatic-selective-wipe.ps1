@@ -161,10 +161,10 @@ $fileName = "autoWipe_$((get-date).tostring("yyyyMMdd")).log"
 
 try {
 
-    $creds = Get-StoredCredential -Target GraphNew
+    $creds = Get-StoredCredential -Target IntuneWipe
 
     $body = @{
-        client_id = "5267372f-f7bc-4570-a4b2-28cb7e66646a"
+        client_id = ""
         username = $creds.GetNetworkCredential().UserName
         password = $creds.GetNetworkCredential().Password
         grant_type = "password"
@@ -183,7 +183,7 @@ catch {
 
 try {
 
-    $tenantID = "69a5c584-5bce-450a-9ee2-4cf417193ebd"
+    $tenantID = ""
     $DCP_resource = "/oauth2/token"
 
     $uri = "https://login.microsoftonline.com/$($tenantID)/$($DCP_resource)"
