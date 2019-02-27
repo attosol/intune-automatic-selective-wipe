@@ -144,7 +144,7 @@ $fileName = "autoWipe_$((get-date).tostring("yyyyMMdd")).log"
 
 try {
 
-    $creds = Get-StoredCredential -Target APINEW                                                    #//\\CHANGE//\\
+    $creds = Get-StoredCredential -Target IntuneAuto                                                    #//\\CHANGE//\\
 
     $body = @{
         client_id = "b6cf47f3-b825-4275-99be-cd2bce16421d"                                          #//\\CHANGE//\\
@@ -229,15 +229,17 @@ Write-Log -logFile $fileName -activity "DT100" -category "INF" -message "Scope o
 
 foreach($_ in $users) {
 
-    $expDate = ([datetime]::ParseExact($_.userLWD,'dd-MMM-yyyy',$null)).tostring('dd MMM yyyy')
+    $expDate = ([datetime]::ParseExact($_.userLWD,'dd-MM-yyyy',$null)).tostring('dd MMM yyyy')
+
+    $userPSNumber = $_.EMP_ID + '@' + 'lntinfotech.com'
     
     if($today -eq $expDate) {
         
-        Write-Log -logFile $fileName -activity "DT101" -category "INF" -message "Match Found: [$($expDate)] $($_.userPSNumber)"
+        Write-Log -logFile $fileName -activity "DT101" -category "INF" -message "Match Found: [$($expDate)] $($userPSNumber)"
         
         Write-Log -logFile $fileName -activity "ID100" -category "INF" -message "Fetching Azure AD Details"
 
-        $userAttributes = Get-AzureADDetails -userps $_.userPSNumber
+        $userAttributes = Get-AzureADDetails -userps $userPSNumber
         
         Write-Log -logFile $fileName -activity "ID100" -category "INF" -message "Fetching AppRegistrations"
 
