@@ -204,7 +204,11 @@ catch {
 
 #region Main
 
-$users = Import-Csv C:\Temp\AutoWipe\source\input_wipe.csv -ErrorAction SilentlyContinue
+$seperationFile = "Separation_List_$((get-date).tostring("yyyyMMdd")).csv"
+
+Write-Log -logFile $fileName -activity "FR100" -category "INF" -message "Reading From File $($seperationFile)"
+
+$users = Import-Csv C:\Temp\AutoWipe\source\$seperationFile -ErrorAction SilentlyContinue
 
 if($users) {
 
